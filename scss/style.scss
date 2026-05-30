@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+$component: "social-links-profile";
+
+// COLORS
+$green: hsl(75, 94%, 57%);
+$white: hsl(0, 0%, 100%);
+$grey-700: hsl(0, 0%, 20%);
+$grey-800: hsl(0, 0%, 12%);
+$grey-900: hsl(0, 0%, 8%);
+
+// TOOLS
+@mixin tool-min-width($width) {
+  @media (min-width: $width) {
+    @content;
+  }
+}
+
+html {
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+}
+
+[class~='#{$component}']{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0 !important;
+    width: 100vw;
+    height: 100vh;
+    background-color: $grey-900;
+}
+
+[class~='#{$component}__container']{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90vw;
+    height: auto;
+    background-color: $grey-800;
+    border-radius: 1rem;
+    padding: 2vw;
+    * {
+        margin-bottom: 2rem;
+    }
+
+    @include tool-min-width(600px){
+        width: 40vw; 
+    }
+    @include tool-min-width(992px){
+        width: 20vw;
+    }
+}
+
+[class~='#{$component}__profile-img']{
+    width: 5rem;
+    height: auto;
+    border-radius: 100%;
+    margin-top: 1.25rem;
+}
+
+[class~='#{$component}__name']{
+    color: $white;
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 0 !important;
+}
+
+[class~='#{$component}__location']{
+    color: $green;
+    font-weight: 700;
+    margin-bottom: 0.75rem !important;
+}
+
+[class~='#{$component}__position']{
+    color: $white;
+    text-align: center;
+}
+
+[class~='#{$component}__buttons']{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0;
+}
+
+[class~='#{$component}__button']{
+    background-color: $grey-700;
+    border: 0;
+    border-radius: 0.5rem;
+    height: 2.5rem;
+    width: 85vw;
+    margin-bottom: 0.75rem;
+    color: $white;
+    @include tool-min-width(600px){
+        width: 40vw;  
+    }
+    @include tool-min-width(992px){
+        width: 20vw;   
+    }
+    &:last-of-type{
+        margin-bottom: 0;
+    }
+}
+
+[class~='#{$component}__button']:hover{
+    background-color: $green;
+    color: black;
+}
+
+
+
+.attribution { font-size: 0.6875rem; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
